@@ -1,0 +1,167 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2019_conference,times}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+%\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{language=R}
+
+\lstset{ 
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	firstnumber=1000,                % start line enumeration with line 1000
+	frame=single,	                   % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+	language=Octave,                 % the language of the code
+	morekeywords={*,...},            % if you want to add more keywords to the set
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mymauve},     % string literal style
+	tabsize=2,	                   % sets default tabsize to 2 spaces
+	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\title{Documentation to Assignment 2 - \uppercase{AUXILIARY TASKS}}
+
+% Authors must not appear in the submitted version. They should be hidden
+% as long as the  macro remains commented out below.
+% Non-anonymous submissions will be rejected without review.
+
+\iclrfinalcopy
+
+\author{Piotr S.~Maciąg \\
+\texttt{P.Maciag@ii.pw.edu.pl} \\
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\iclrfinalcopy % Uncomment for camera-ready version, but NOT for submission.
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%
+%\end{abstract}
+
+\section{Preliminaries}
+
+The following sections contain the solutions to problems 2-5 from the given assignment 2.  To create all plots, the \textit{ggplot2} package for the R language is used \citep{RPackage:GGPLOT2}. For the implementation of classification results given in \citep{du2018adapting} we used Keras library for R \cite{Keras}. All source codes (both implementation of classification and generating plots) are available at the Github repository \citep{Github}.
+
+\section{Ad problem 2}
+
+
+\begin{enumerate}
+	\item The given assignment concerns the problem of solving a \textit{main task} $ \mathcal{T}_{main} $ under the assumption that an \textit{auxiliary task} $ \mathcal{T}_{aux} $ is given. The authors propose to use auxiliary task $ \mathcal{T}_{aux} $ to positively improve a solution of the main task $ \mathcal{T}_{main} $, but with the assumption that it will never affect finding the solution of $ \mathcal{T}_{main} $ negatively. 
+	\item For each of two task, the loss functions are defined: $ \mathcal{L}_{main} $ for the main task and $ \mathcal{L}_{aux} $ for the auxiliary task, respectively. Two models $ f(\cdot,\theta,\phi_{main}) $ and $g(\cdot,\theta,\phi_{aux})$ (e.g. neural networks) are used to solve the main and auxiliary tasks, respectively. The two models share the vector of parameters $ \theta $ as well as have their separate parameters' vectors ($ \phi_{main} $ for the main task $ \mathcal{T}_{main} $ and $ \phi_{aux} $ for the auxiliary task $ \mathcal{T}_{aux} $, respectively). In particular, the authors propose to solve $ \mathcal{T}_{main} $ by minimization of the overall loss function given in Eq~(\ref{Eq:1}).
+	\begin{equation}
+		\smash{\displaystyle\min \limits_{\lambda^{(t)}}} \texttt{  } \mathcal{L}_{main}(\theta^{(t)} - \alpha\nabla_{\theta}(\mathcal{L}_{main} + \lambda^{(t)}\mathcal{L}_{aux})
+	\label{Eq:1}
+	\end{equation}  
+	\item To do this end, the authors introduce three propositions 
+	\item The article clearly explains the main problem and the proposed solution. However, in some its parts it could be more detailed: 
+	\begin{itemize}
+		\item In subsection 3.1 (Experiments on image classification tasks), when comparing different approaches (single-task, multi-task and proposed approach) what are the experimental setups and how single task and multi task are defined.In particular, what is denoted in axis X in Figure~2.
+		\item Why only cosine similarity is selected for $ \lambda $ approximation. The other possible measure may be ...
+		\item 
+	\end{itemize}  
+	\item 
+\end{enumerate}
+
+
+\section{Ad problem 3}
+
+In Figure~\ref{Fig:LossFunc}, Figure~7 from \citep{du2018adapting} is reproduced. The documented code which generates plots in Figure~\ref{Fig:LossFunc} using the \textit{ggplot2} package is contained in a file entitled \textit{Figure7Plot.R} and included in the github repository xxx.  
+
+\begin{figure}[h!t]
+	\centering 
+	\includegraphics[width=1.0\linewidth]{Figure7.pdf}
+	\caption{Reproduction of Figure~7 from \citep{du2018adapting}.}
+	\label{Fig:LossFunc} 
+\end{figure}
+
+The plots in Figure~\ref{Fig:LossFunc} are generated as follows: first loss and their gradient functions are defined. The loss function for the main task and auxiliary task are plot for all $ \theta $ between $ -20 $ and $ 30 $ as presented in \textit{Loss Functions}. Second,  for the same range of $ \theta $, the cosine similarity function between the two gradient functions is defined and plot as presented in \textit{Gradient Cosine Similarity}.  
+
+\section{Ad problem 4}
+
+In our experiments, we used Keras deep learning library for the R language \cite{Keras}  with TensorFlow library in version 1.11 (GPU version) \cite{TensorFlow}. All computation are performed using GPU. 
+
+For the experimental results presented in the next section, we used the following setup of neural network:
+
+\begin{itemize}
+	\item A linear stack of layers is used.
+	\item The first two layers consists of convolution neural networks.
+	\item 
+\end{itemize}
+
+Unfortunately, 
+
+The code in R performing classification is included in file \textit{Classification.R} and contained in the Github repository.
+
+\section{Ad problem 5}
+
+At the moment of solving the given assignment, the full version of ImageNet dataset used in the experiments in \citep{du2018adapting} is under maintenance and is not available for download. Moreover, the full version contains more than 155 GB of data which makes it difficult to use at a typical personal laptop and can not be used as well in the proposed Colab environment. 
+
+Because of these reasons, we decided to use a tiny version of ImageNet in our experiments \citep{ImageNet}. The tiny version of dataset can be downloaded from the same page as the full version and is characterized by the following setup: only 200 classes from the original 1000 classes of ImageNet are selected. The 500 images for each one from the 200 classes are given. The resolution of each image is 64 x 64 pixels and 3 channels of colors RGB are given. Unfortunately, not all categories originally used in the experiments in \cite{du2018adapting} are available in the used tiny version of ImageNet. Because of that, we selected three pairs of near categories and three pairs of far categories as follows:
+
+\begin{itemize}
+	\item For near categories: Egyptian cat and Persian cat; Golden retriever and Labrador retriever; Monarch butterfly and Sulphur butterfly.
+	\item For far categories: elephant and teapot; baber shop and lemon; chimpanzee and orange.
+\end{itemize}  
+
+All other images contained in a tiny ImageNet are used as the \textit{background} images in classification.
+
+To compare classification results for the multi task (where each from selected two classes in a pair is classified against the other one and against the background images) and single task (where only the first class from a pair is classified against the set of background images), we choose: from the near pairs Egyptian cat vs. Persian cat and from the far pairs elephant vs. teapot. The results of classification are provided in Figure~\ref{Fig:ClassResults}. Figure~\ref{Fig:ClassResults} is generated using \textit{Rplots.R} file contained in the Github repository.
+
+\begin{figure}[h!t]
+	\centering 
+	\includegraphics[width=1.0\linewidth]{ClassificationResults.pdf}
+	\caption{Reproduction of classification results for two types of images: for the near pair we selected Egyptian cat (class id 285) and Persian cat (class id 283). For the far pair African elephant (class id 386) and teapot (class id 849) are selected. The plots are illustrating two classification task: multi task where each selected category is classified against all other images (background) and single task where only the first selected class from each pair is classified against the set of background images.}
+	\label{Fig:ClassResults} 
+\end{figure}
+
+
+\bibliography{iclr2019_conference}
+\bibliographystyle{iclr2019_conference}
+
+\end{document}

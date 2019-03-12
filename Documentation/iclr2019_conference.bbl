@@ -1,0 +1,45 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Allaire \& Chollet(2019)Allaire and Chollet]{Keras}
+JJ~Allaire and François Chollet.
+\newblock Keras library for the r language, 2019.
+\newblock URL \url{https://keras.rstudio.com/}.
+
+\bibitem[Du et~al.(2018)Du, Czarnecki, Jayakumar, Pascanu, and
+  Lakshminarayanan]{du2018adapting}
+Yunshu Du, Wojciech~M Czarnecki, Siddhant~M Jayakumar, Razvan Pascanu, and
+  Balaji Lakshminarayanan.
+\newblock Adapting auxiliary losses using gradient similarity.
+\newblock \emph{arXiv preprint arXiv:1812.02224}, 2018.
+
+\bibitem[Fei-Fei et~al.(2019)Fei-Fei, Li, Russakovsky, Krause, Deng, and
+  Berg]{ImageNet}
+Li~Fei-Fei, Kai Li, Olga Russakovsky, Jonathan Krause, Jia Deng, and Alex Berg.
+\newblock Tiny imagenet, 2019.
+\newblock URL \url{https://tiny-imagenet.herokuapp.com/}.
+
+\bibitem[Inc.(2019)]{TensorFlow}
+Google Inc.
+\newblock R interface to tensorflow, 2019.
+\newblock URL \url{https://tensorflow.rstudio.com/}.
+
+\bibitem[Maciag(2019)]{Github}
+Piotr Maciag.
+\newblock Github repository with the code for the assignment, 2019.
+\newblock URL \url{https://github.com/piotrMaciag32/Tooploox---task-2}.
+
+\bibitem[Wickham et~al.(2018)Wickham, Chang, Henry, Pedersen, Takahashi, Wilke,
+  and Woo]{RPackage:GGPLOT2}
+Hadley Wickham, Winston Chang, Lionel Henry, Thomas~Lin Pedersen, Kohske
+  Takahashi, Claus Wilke, and Kara Woo.
+\newblock ggplot2 r package: Create elegant data visualisations using the
+  grammar of graphics, 2018.
+\newblock URL
+  \url{https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf}.
+
+\end{thebibliography}
