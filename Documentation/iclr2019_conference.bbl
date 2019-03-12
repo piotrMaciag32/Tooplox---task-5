@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -27,6 +27,16 @@ Li~Fei-Fei, Kai Li, Olga Russakovsky, Jonathan Krause, Jia Deng, and Alex Berg.
 Google Inc.
 \newblock R interface to tensorflow, 2019.
 \newblock URL \url{https://tensorflow.rstudio.com/}.
+
+\bibitem[Kryszkiewicz(2013)]{Kryszkiewicz}
+Marzena Kryszkiewicz.
+\newblock On cosine and tanimoto near duplicates search among vectors with
+  domains consisting of zero, a positive number and a negative number.
+\newblock In Henrik~Legind Larsen, Maria~J. Martin-Bautista, Mar{\'i}a~Amparo
+  Vila, Troels Andreasen, and Henning Christiansen (eds.), \emph{Flexible Query
+  Answering Systems}, pp.\  531--542, Berlin, Heidelberg, 2013. Springer Berlin
+  Heidelberg.
+\newblock ISBN 978-3-642-40769-7.
 
 \bibitem[Maciag(2019)]{Github}
 Piotr Maciag.

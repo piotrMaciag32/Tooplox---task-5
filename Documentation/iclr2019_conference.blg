@@ -2,13 +2,13 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: iclr2019_conference.a
 The style file: iclr2019_conference.bst
 Database file #1: iclr2019_conference.bib
 Warning--entry type for "Github" isn't style-file defined
---line 2 of file iclr2019_conference.bib
+--line 21 of file iclr2019_conference.bib
 Warning--entry type for "TensorFlow" isn't style-file defined
---line 29 of file iclr2019_conference.bib
+--line 48 of file iclr2019_conference.bib
 Warning--entry type for "Keras" isn't style-file defined
---line 56 of file iclr2019_conference.bib
+--line 75 of file iclr2019_conference.bib
 Warning--entry type for "ImageNet" isn't style-file defined
---line 84 of file iclr2019_conference.bib
+--line 103 of file iclr2019_conference.bib
 Warning--entry type for "RPackage:GGPLOT2" isn't style-file defined
---line 112 of file iclr2019_conference.bib
+--line 131 of file iclr2019_conference.bib
 (There were 5 warnings)

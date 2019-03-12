@@ -98,20 +98,19 @@ The following sections contain the solutions to problems 2-5 from the given assi
 		\smash{\displaystyle\min \limits_{\lambda^{(t)}}} \texttt{  } \mathcal{L}_{main}(\theta^{(t)} - \alpha\nabla_{\theta}(\mathcal{L}_{main} + \lambda^{(t)}\mathcal{L}_{aux})
 	\label{Eq:1}
 	\end{equation}  
-	\item To do this end, the authors introduce three propositions 
+	\item To do this end, the authors introduce three propositions and show their usefulness for the proposed solution.
 	\item The article clearly explains the main problem and the proposed solution. However, in some its parts it could be more detailed: 
 	\begin{itemize}
 		\item In subsection 3.1 (Experiments on image classification tasks), when comparing different approaches (single-task, multi-task and proposed approach) what are the experimental setups and how single task and multi task are defined.In particular, what is denoted in axis X in Figure~2.
-		\item Why only cosine similarity is selected for $ \lambda $ approximation. The other possible measure may be ...
-		\item 
+		\item Why only cosine similarity is selected for $ \lambda $ approximation. It has been presented in \citep{Kryszkiewicz}  that Tanimoto similarity is strictly related to cosine similarity. Maybe Tanimoto similarity will give better results?
+		\item The experiments presented in subsection 3.1 are not very much convincing that the proposed solution can give better results that simple single task classification. In fact, the classification for the near pair in nearly the same for the single task classification as for the proposed solution and for the far pair the proposed solution is not giving better results than multi task classification.
 	\end{itemize}  
-	\item 
 \end{enumerate}
 
 
 \section{Ad problem 3}
 
-In Figure~\ref{Fig:LossFunc}, Figure~7 from \citep{du2018adapting} is reproduced. The documented code which generates plots in Figure~\ref{Fig:LossFunc} using the \textit{ggplot2} package is contained in a file entitled \textit{Figure7Plot.R} and included in the github repository xxx.  
+In Figure~\ref{Fig:LossFunc}, Figure~7 from \citep{du2018adapting} is reproduced. The documented code which generates plots in Figure~\ref{Fig:LossFunc} using the \textit{ggplot2} package is contained in a file entitled \textit{Figure7Plot.R} and included in the github repository \citep{Github}.  
 
 \begin{figure}[h!t]
 	\centering 
@@ -131,10 +130,10 @@ For the experimental results presented in the next section, we used the followin
 \begin{itemize}
 	\item A linear stack of layers is used.
 	\item The first two layers consists of convolution neural networks.
-	\item 
+	\item Two dense layers, with the second one providing the results of classification.
 \end{itemize}
 
-Unfortunately, 
+Unfortunately, due to the technical limitations of Keras library (especially when processing large image data as the one used in our experiments) we were not able to implement Algorithm~1 from article \cite{du2018adapting}. In particular, the problem is with obtaining gradients after each batch of data is processed by the \texttt{fit\_generator} function used to train a neural network. Such gradients can be obtained when the network is trained in the the \textit{eager} mode of TensorFlow library, however the eager mode can not be used with the image processing functions and object (especially \texttt{generator} object used to read image data). The possible solution to that problem is to introduce the user own schema of storing image data as tensors. However, time constraints did not allow us to find such solution.
 
 The code in R performing classification is included in file \textit{Classification.R} and contained in the Github repository.
 
